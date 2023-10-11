@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin" />
+    <script src="/index.js" defer></script>
+    <title>about</title>
+    <style>
+        /* ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation-duration: 0.5s;
+        } */
+
+        section {
+            & h1 {
+                view-transition-name: link-morph-about;
+            }
+
+            & a {
+                view-transition-name: link-morph-home;
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+    <main style="height: 100vh; background-color: black; color: white; display: grid; place-items: center;">
+        <section>
+          <h1>about page</h1>
+          <a href="/">go to home page</a>
+        </section>
+    </main>
+</body>
+</html>

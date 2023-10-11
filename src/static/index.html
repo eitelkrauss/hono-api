@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin" />
+    <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous" defer></script>
+    <title>home</title>
+    <style>
+        /* ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation-duration: 0.5s;
+        } */
+/* 
+        ::view-transition-old(link-morph){
+            animation: fade-out 1s;
+        }
+        ::view-transition-new(link-morph) {
+            animation: fade-in 1s;
+        } */
+
+        #title {
+            view-transition-name: link-morph-home;
+        }
+
+        [href="/about"] {
+            view-transition-name: link-morph-about;
+        }
+
+        #user-list-section {
+            & ul {
+                overflow-y: hidden;
+                :nth-child(1){
+                    animation: fade-in 1000ms ease-out, sneaky 1s;
+                }
+                :nth-child(2){
+                    animation: fade-in 1000ms ease-out, sneaky 2s;
+                }
+                :nth-child(3){
+                    animation: fade-in 1000ms ease-out, sneaky 3s;
+                }
+                :nth-child(4){
+                    animation: fade-in 1000ms ease-out, sneaky 4s;
+                }
+                :nth-child(5){
+                    animation: fade-in 1000ms ease-out, sneaky 5s;
+                }
+                :nth-child(6){
+                    animation: fade-in 1000ms ease-out, sneaky 6s;
+                }
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+        }
+
+        @keyframes sneaky{
+            from {
+                transform: translateY(-100%);
+            }
+        }
+
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <p id="title">view transitions home</p>
+            <a href="/about">go to about page</a>
+        </section>
+        <section id="user-list-section">
+            <button hx-get="/api/users" hx-target="#user-list" hx-swap="outterHtml">get users</button>
+            <ul id="user-list">user list empty</ul>
+        </section>
+    </main>
+</body>
+
+</html>

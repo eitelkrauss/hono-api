@@ -1,0 +1,1 @@
+UPDATE Users SET bio = :newBio WHERE email = :login

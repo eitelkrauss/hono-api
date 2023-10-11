@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "bun run --hot src/index.tsx"
+  },
+  "dependencies": {
+    "hono": "^3.5.4",
+    "mysql2": "^3.6.0"
+  },
+  "devDependencies": {
+    "bun-types": "^0.6.2",
+    "drizzle-kit": "^0.19.13"
+  }
+}
